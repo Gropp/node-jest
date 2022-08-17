@@ -1,35 +1,15 @@
 import { Router } from 'express'
+import { usersController } from './controllers/usersController.js'
 
 const routes = Router()
-//definir de onde virao os dados
-//teremos um array simulando um BD
-//nomes de usuarios
-const database = ['Fernando Gropp']
 
 //o caminho das rotas sao importantes para a organizacao e acesso aos dados
 //faz um get no servidor e retorna no formato json
-routes.get('/users', (request, response) => {
-    return response.status(200).json(database)
-})
+routes.get('/users', usersController.listarUsuario)
 
 //faz um post - sempre cadastra algo
 //o request é o body do que sera incluido
-routes.post('/users', (request, response) => {
-    //descontroi o body
-    const { name } = request.body
-    //localizar o erro
-    //console.log(body)
-
-    //validacao para nao incluir um usuario vazio
-    //como a string em javascript é um array, podemos testar o tamanho do array
-    if(name.length < 1) {
-        return response.status(403).json({'mensagem':'Não é possivel criar usuário sem nome'})
-    }
-
-    //fazemos um apend no array
-    database.push(name)
-    return response.status(201).json({'mensagem': `Usuário ${name} criado com sucesso!`})
-})
+routes.post('/users', usersController.criarUsuario)
 
 
 //GET - ler dados
