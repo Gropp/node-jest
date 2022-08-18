@@ -1,6 +1,6 @@
 
 describe('Users Controller', () => {
-    it('Deve somar 1 + 1', () => {
+    it('Deve somar 1 + 2', () => {
         //Arrange - montar o cenario a ser testado
         function soma (a, b) {
             return a + b
