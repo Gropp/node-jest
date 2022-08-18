@@ -1,12 +1,8 @@
-//definir de onde virao os dados
-//teremos um array simulando um BD
-//nomes de usuarios
-
 const database = [
-    "Fernando Gropp",
-    "Henrique Gropp",
-    "Olivia Gropp"
+  "Nath",
+  "Felipe",
+  "Haruo",
+  "Adriana"
 ]
 
-//forma de exporta default uma constante
-export {database}
+export { database }
