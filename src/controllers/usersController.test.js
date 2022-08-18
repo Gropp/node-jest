@@ -2,7 +2,7 @@
 describe('Users Controller', () => {
     it('Deve somar 1 + 1', () => {
         //Arrange - montar o cenario a ser testado
-        function soma (a: number, b: number) {
+        function soma (a, b) {
             return a + b
         }
         //Acao - chamar o cenario
